@@ -1,8 +1,9 @@
 Edu project rbblog
 ====
 
-[Sinatra](http://www.sinatrarb.com/)
-[Twitter Bootstrap v.4.0](http://getbootstrap.com/)
+[Sinatra](http://www.sinatrarb.com/) <br>
+[Twitter Bootstrap v.4.0](http://getbootstrap.com/) <br>
+[A clean, Bootstrap blog theme](https://startbootstrap.com/template-overviews/clean-blog/)
 
 
 Heroku deploy

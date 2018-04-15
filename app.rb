@@ -4,7 +4,7 @@ require 'sinatra/reloader'
 require 'sinatra/activerecord'
 
 # debug off
-#set :show_exceptions, false
+set :show_exceptions, false
 
 class Posts < ActiveRecord::Base
     validates :post_title, uniqueness: true
