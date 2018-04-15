@@ -7,8 +7,8 @@ require 'sinatra/activerecord'
 #set :show_exceptions, false
 
 class Posts < ActiveRecord::Base
-    #validates :post_title, presence: true, length: {minimum: 3}
-    #validates :postbody, presence: true, length: {maximum: 100}
+    validates :post_title, uniqueness: true
+    validates :post_body, uniqueness: true
 
 end
 
@@ -21,11 +21,12 @@ end
 
 get '/' do
     @title = 'Main blog page'
-    @posts = Posts.all
+    @posts = Posts.order(id: :desc)
     erb :index
   end
 
 get '/new' do
+    @c = Posts.new
     @title = 'New post'
     erb :newpost
   end
@@ -34,8 +35,10 @@ post '/new' do
     @title = 'New post'
     @c = Posts.new params[:post]
     if @c.save
+      
+      #erb :newpost
+      redirect to ('/')
       @message, @type = 'Post created', 'info'
-      erb :newpost
     else
       @message, @type = @c.errors.full_messages.first, 'warning'
     erb :newpost
