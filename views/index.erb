@@ -56,15 +56,9 @@
           </div> %>
 
 
-    <div class="container">
-      <div class="row">
-        <div class="col-lg-8 col-md-10 mx-auto">
 
         <% @posts.each {|post| %>
         <%= " <h1> <a href=\"/post/#{post.id}\"> #{post.post_title} </a></h1> <br> #{post.post_body} <br> <hr> "%>
         <% } %>
 
 
-        </div>
-      </div>
-    </div>

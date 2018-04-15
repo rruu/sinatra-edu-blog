@@ -71,13 +71,19 @@
     </header> 
 
 
+    <div class="container">
+      <div class="row">
+        <div class="col-lg-8 col-md-10 mx-auto">
+
                  <%if @message then %>
                   <br>
 			          <div class="alert alert-<%=@type%>"><%=@message%></div>
 			      <% end %>
 			      <%= yield %>
 
-          
+        </div>
+      </div>
+    </div>  
 
           <%# <!-- Pager -->
           <div class="clearfix">
