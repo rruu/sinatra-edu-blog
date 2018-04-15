@@ -44,12 +44,4 @@ post '/new' do
   get '/post/:post_id' do
     @post = Posts.find params[:post_id]
     erb :post
-
-#    post_id = params[:post_id]
-#    erb "Display id #{post_id}"
-#    result = @db.execute 'select * from Posts where id = ?', [post_id]
-#    @row = result[0]
-#
-#    @comments = @db.execute 'select * from comments where post_id = ? order by id', [post_id]
-#    erb :post
 end
